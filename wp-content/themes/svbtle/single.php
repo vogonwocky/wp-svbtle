@@ -81,19 +81,7 @@ $posts=$wpdb->get_results($wpdb->prepare(
 ));
 ?>
 
-<div>
-  <h2 id='also-read-title'>Also read...</h2>
-  <ul id='also-read-items'>
-  <?php for($i=0; $i<count($posts); $i++): ?>
-    <li>
-      <a href="<?php echo get_permalink($posts[$i]->post_id); ?>">
-        <h3><?php echo get_the_title($posts[$i]->post_id); ?></h3>
-        <p class="link_kudo"><?php echo $posts[$i]->meta_value; ?></p>
-      </a>
-    </li>
-  <?php endfor; ?>
-  </ul>
-</div>
+
 
 <?php comments_template(); ?>
 
@@ -114,7 +102,7 @@ $posts=$wpdb->get_results($wpdb->prepare(
       $color = "#ff0000";
   ?>
 
-  jQuery(document).ready(function($) {
+  /* jQuery(document).ready(function($) {
     $("#also-read-items li").hover(
       function() {
         $(this).css('color', 'white');
@@ -127,5 +115,5 @@ $posts=$wpdb->get_results($wpdb->prepare(
         $(this).find('.link_kudo').css('border', '3px solid #777');
       }
     );
-  });
+  });*/
 </script>
